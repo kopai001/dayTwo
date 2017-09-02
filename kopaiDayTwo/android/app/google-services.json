@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "964400021226",
+    "firebase_url": "https://fb01-114e2.firebaseio.com",
+    "project_id": "fb01-114e2",
+    "storage_bucket": "fb01-114e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964400021226:android:c1a2df4194a902ef",
+        "android_client_info": {
+          "package_name": "com.kopaidaytwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964400021226-rp4egribc7gs1cdb2dgaefbrgsds451b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kopaidaytwo",
+            "certificate_hash": "4a491f03b03ce8fec9d6f89f35ef4cef453a8578"
+          }
+        },
+        {
+          "client_id": "964400021226-2n73huf1jdkvaebhbjrcje7bka41mqpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmqR8PQESGXJcFi5cbFme111JnAvrvOXE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964400021226-2n73huf1jdkvaebhbjrcje7bka41mqpv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
