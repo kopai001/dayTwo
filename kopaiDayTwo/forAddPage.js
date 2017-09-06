@@ -27,6 +27,7 @@ import PageOne from './PageOne';
         
               var value = this.refs.form.getValue();
               if (value) {
+                if(value.score<=10){
                 firebase.database().ref('todos').push(value).
                 then((data) => {
                     dispatch({ type: "FULFILLED" })
@@ -36,9 +37,11 @@ import PageOne from './PageOne';
                 catch((err) => {
                     dispatch({ type: "REJECTED" })
                     console.log("add to Firebase failed")
-                    
-                    //error
                 });
+              }
+              else{
+                <Text>kopai</Text>
+              }
             }
     }
 
@@ -54,6 +57,7 @@ import PageOne from './PageOne';
               type={info}
               options={options}
             />
+            <Text style={{margin:10}}>Score must be 0-10</Text>
             <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
               <Text style={styles.buttonText}>Add Comment</Text>
             </TouchableHighlight>

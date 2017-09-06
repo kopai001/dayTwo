@@ -18,7 +18,14 @@ export default class Detail extends React.Component {
         return(
             <TouchableHighlight onPress={this.press}>
             <View style={styles.container}>
-                <Text>{this.props.title}</Text>
+                <View style={styles.detailContainer} >
+                <Text style={{color:'black'}} >{this.props.title}</Text>
+                <Text>
+                    <Text>{this.props.score}</Text>
+                    <Text>/10</Text>
+                </Text>
+                
+            </View>
             </View>    
             </TouchableHighlight>
         )
@@ -29,15 +36,18 @@ export default class Detail extends React.Component {
 
 const styles = StyleSheet.create({
     container:{
-        height:30,
-        flexDirection: 'row',
+        height:60,
+        margin: 10,
+        borderRadius: 8,
+        borderWidth:2,
+        borderBottomWidth:5,
+        borderColor:'#48BBEC',
+        // flexDirection: 'row',
         justifyContent:'center',
         color: '#fff',
         backgroundColor:"#fff"
     },
     detailContainer:{
-        
-        flex:3,
-        justifyContent:'center'
+        margin: 10
     }
 })

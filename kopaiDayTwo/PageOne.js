@@ -4,12 +4,21 @@ import { Actions } from 'react-native-router-flux';
 import PageTwo from './PageTwo';
 import forAddPage from './forAddPage';
 import Detail from './components/Detail'
+import moreInfoPage from './moreInfoPage'
+
 import {
+  WebView,
   AppRegistry,
   StyleSheet,
   Text,
-  View,Button,ListView,Image,TouchableHighlight
+  View,Button,ListView,Image,TouchableHighlight,ScrollView
 } from 'react-native';
+
+
+
+
+firebase.messaging().subscribeToTopic('notic');
+
 export default class PageOne extends Component {
     constructor() {
         super();
@@ -74,28 +83,43 @@ export default class PageOne extends Component {
       }
       
       _renderRow=rowdata=>{
+        console.log("heloooooooooooo")
         return <Detail {...rowdata}/>
       }
       // Render the list of ToDos with a Button
       render() {
         return (
-          <View >
-            <Image
-            style={{ height: 200,resizeMode:'contain'}}
-            source={{uri: 'https://www.movie2free.com/wp-content/uploads/2017/08/new-kong-skull-island-poster-16291-23-230x300.jpg'}}
-            />
-            <View style={{justifyContent:'space-around'}}>
-            <ListView 
-              dataSource={this.state.todos}
-              renderRow={this._renderRow}
-
-            />
-    
-            <TouchableHighlight style={styles.button} onPress={Actions.forAddPage} underlayColor='#99d9f4'>
-              <Text style={styles.buttonText}>Add Comment</Text>
-            </TouchableHighlight>
+          <View style={{flex:1,backgroundColor:"#e1f4ff"}}>
+          <ScrollView >
+            <View>
+              <Image
+              style={{ height: 300,resizeMode:'contain',flex:1,marginTop:10,borderRadius: 3}}
+              source={{uri: 'https://www.movie2free.com/wp-content/uploads/2017/08/new-kong-skull-island-poster-16291-23-230x300.jpg'}}
+              />
+              
             </View >
+            <View style={{margin:10}} >
+            <TouchableHighlight style={styles.button} onPress={Actions.moreInfoPage} underlayColor='#99d9f4'>
+              <Text style={styles.buttonText}>More Infomation</Text>
+            </TouchableHighlight>
+            <View style={{borderRadius: 8,borderColor:'#48BBEC',borderWidth:5,backgroundColor:'#48BBEC'}}>
+              <Text style={{backgroundColor:'#48BBEC',fontSize:20,fontWeight:'bold',color:'black'}}>Review</Text>
+                <ListView style={{backgroundColor:'#dff',borderRadius: 8}}
+                  dataSource={this.state.todos}
+                  renderRow={this._renderRow}
+
+                />
+            </View>
+    
+
+            </View>
+            
+          </ScrollView>
+              <TouchableHighlight style={styles.button} onPress={Actions.forAddPage} underlayColor='#99d9f4'>
+                <Text style={styles.buttonText}>Add Comment</Text>
+              </TouchableHighlight>
           </View>
+
         );
       }
     
@@ -122,14 +146,11 @@ export default class PageOne extends Component {
   
   const styles = StyleSheet.create({
     container: {
+      
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#FFF',
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
+      flexDirection: 'row'
     },
     instructions: {
       textAlign: 'center',
@@ -140,17 +161,21 @@ export default class PageOne extends Component {
       marginBottom:20
     },
     buttonText: {
+      fontWeight:'bold',
       fontSize: 18,
-      color: 'white',
+      color: 'black',
       alignSelf: 'center'
     },
     button: {
+      margin:5,
+      marginTop:10,
+      alignItems:'flex-end',
       height: 36,
-      backgroundColor: '#48BBEC',
-      borderColor: '#48BBEC',
-      borderWidth: 1,
+      backgroundColor: '#ffd800',
+      borderColor: '#ffd800',
+      borderWidth: 2,
       borderRadius: 8,
-      marginBottom: 20,
+      
       alignSelf: 'stretch',
       justifyContent: 'center'
     }

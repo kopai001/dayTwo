@@ -5,6 +5,7 @@ import Login from './Login'
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
 import forAddPage from './forAddPage';
+import moreInfoPage from './moreInfoPage'
 import {
   AppRegistry,
   StyleSheet,
@@ -13,16 +14,18 @@ import {
   Button,ListView
 } from 'react-native';
 
+firebase.messaging().subscribeToTopic('notic');
 
 export default class kopaiDayTwo extends Component {
     render(){
       return(
         <Router>
           <Scene key="root">
-          <Scene key="login" component={Login} title="Login" initial={true}/>
-          <Scene key="pageOne" component={PageOne} title="PageOne" />
+          <Scene key="login" component={Login} title="Login"  initial={true}/>
+          <Scene key="pageOne" component={PageOne} title="Annabelle : creation"  />
           <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
-          <Scene key="forAddPage" component={forAddPage} title="forAddPage" />
+          <Scene key="forAddPage" component={forAddPage} title="Add Comment" />
+          <Scene key="moreInfoPage" component={moreInfoPage} title="IMDb" />
           </Scene>
         </Router>
       )

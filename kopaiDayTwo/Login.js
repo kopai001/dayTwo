@@ -39,6 +39,7 @@ export default class Login extends Component{
         return (
             <View style={styles.container}>
               {/* display */}
+              <Text style={{ alignSelf: 'center',color:'black',fontSize: 30, fontWeight:'bold'}} >LOGIN</Text>
               <Form
                 ref="form"
                 type={Person}
@@ -54,8 +55,11 @@ export default class Login extends Component{
 
 var styles = StyleSheet.create({
     container: {
+      flex:1,
       justifyContent: 'center',
       marginTop: 50,
+      marginBottom:50,
+      margin:5,
       padding: 20,
       backgroundColor: '#ffffff',
     },
