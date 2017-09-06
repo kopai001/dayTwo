@@ -21,10 +21,10 @@ export default class kopaiDayTwo extends Component {
       return(
         <Router>
           <Scene key="root">
-          <Scene key="login" component={Login} title="Login"  initial={true}/>
+          <Scene key="login" component={Login} title="Login" initial={true} />
           <Scene key="pageOne" component={PageOne} title="Annabelle : creation"  />
           <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
-          <Scene key="forAddPage" component={forAddPage} title="Add Comment" />
+          <Scene key="forAddPage" component={forAddPage} title="Add Comment"   />
           <Scene key="moreInfoPage" component={moreInfoPage} title="IMDb" />
           </Scene>
         </Router>

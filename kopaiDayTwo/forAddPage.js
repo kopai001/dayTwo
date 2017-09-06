@@ -3,10 +3,7 @@ import firebase from './firebase'
 
 import t from 'tcomb-form-native';
 import {
-    AppRegistry,
-    StyleSheet,
-    Text,
-    View,Button,ListView,Image,TouchableHighlight
+    AppRegistry,StyleSheet,Text,View,Button,ListView,Image,TouchableHighlight,Alert
   } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import PageOne from './PageOne';
@@ -40,7 +37,14 @@ import PageOne from './PageOne';
                 });
               }
               else{
-                <Text>kopai</Text>
+                Alert.alert(
+                  'Score',
+                  'Score ต้องอยู่ในช่วง 1-10',
+                  [
+                    {text: 'OK', onPress: () => console.log('OK Pressed')},
+                  ],
+                  { cancelable: false }
+                )
               }
             }
     }
